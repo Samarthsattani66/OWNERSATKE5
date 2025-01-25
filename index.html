@@ -1,160 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible=IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TEAMROHITOFFICAL45_LIVE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orion+Esperanto+Dika&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --mi-blue: #045093;
-      --csk-yellow: #FFD700;
-      --rcb-red: #A50C1B;
-      --kkr-purple: #3F2A56;
-      --dc-blue: #004BA0;
-      --rr-pink: #EA1C69;
-      --srh-orange: #F26522;
-      --lsg-skyblue: #87CEEB;
-      --gt-navy: #1B1F3B;
-      --current-color: var(--mi-blue);
-    }
-    html {
-      font-family: 'Orion Esperanto Dika', sans-serif;
-      background: var(--current-color);
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    body {
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TG_TEAMROHIT</title>
+<script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+</head>
+<style>
+body {
+    background-color: black;
+}
+#container {
+    background-color: black;
+}
+    #telegramButton {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      color: #DAA520;
-    }
-    #player-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin-top: 20px;
-    }
-    #player {
-      width: 100%;
-      border: 5px solid #FFFF00;
-      border-radius: 10px;
-      box-shadow: 0 0 20px 5px rgba(255, 255, 0, 0.7);
-    }
-    #watermark {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 14px;
-      font-style: italic;
-      font-weight: bold;
-      z-index: 10;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      pointer-events: none;
-    }
-    #theme-selector {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: 2px solid #fff;
+      justify-content: center;
+      width: 378px;
+      height: 50px;
+      background: linear-gradient(90deg, darkblue, #001f3f);
+      color: white;
       border-radius: 5px;
       cursor: pointer;
-      color: #fff;
-      background-color: var(--current-color);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      animation: flowAnimation 2s infinite;
     }
-    #theme-selector:hover {
-      background-color: #fff;
-      color: var(--current-color);
+
+    @keyframes flowAnimation {
+      0% {
+        background-position: -200px 0;
+      }
+      100% {
+        background-position: 200px 0;
+        }
     }
-    .player-images img {
-      display: none;
-      margin-top: 20px;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-    .player-images img.active {
-      display: block;
+
+    #telegramButton:hover {
+      animation: none; /* Pause animation on hover */
+      background: linear-gradient(90deg, #001f3f, darkblue); /* Reverse colors on hover */
     }
   </style>
-  <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
-</head>
 <body>
-  <div id="player-container">
-    <div id="player"></div>
-    <div id="watermark">TEAMROHITOFFICAL45</div>
+<div id="video"></div>
+
+<script type="text/javascript">
+  jwplayer("video").setup({
+    width: "100%",
+    height: "100%",
+    autostart: true,
+    mute: false,
+    file:"https://allinonereborn.com/test.m3u8/?id=15521"
+  });
+</script>
+<script>
+if(confirm("Join Our Telegram Channel")) { window.location.href = "https://t.me/teamrohitoff45" }
+</script>
+  <div id="telegramButton" onclick="redirectToTelegram()">
+  Join Telegram
   </div>
-
-  <!-- Button to change themes -->
-  <button id="theme-selector">Change Theme</button>
-
-  <!-- Player images -->
-  <div class="player-images">
-    <img id="mi" src="https://ibb.co/hCDDyKw" alt="Rohit Sharma (Mumbai Indians)" class="active">
-    <img id="csk" src="https://ibb.co/2vz2XKt" alt="MS Dhoni (Chennai Super Kings)">
-    <img id="rcb" src="https://ibb.co/jDSt215" alt="Virat Kohli (Royal Challengers Bangalore)">
-    <img id="kkr" src="https://ibb.co/zVR3LHk" alt="Andre Russell (Kolkata Knight Riders)">
-    <img id="dc" src="https://ibb.co/X2Vw6pL" alt="Axar patel  (Delhi Capitals)">
-    <img id="rr" src=" https://ibb.co/XYgpR77" alt="Sanju Samson (Rajasthan Royals)">
-    <img id="srh" src="https://ibb.co/VtvFQ3M" alt="Henrich klasan (Sunrisers Hyderabad)">
-    <img id="lsg" src="https://ibb.co/fxvtj2x" alt="Nicholas Puran (Lucknow Super Giants)">
-    <img id="gt" src="https://ibb.co/myZy9J9" alt=" shubman gill (Gujarat Titans)">
-  </div>
-
   <script>
-    var playerInstance = jwplayer("player").setup({
-      file: 'https://example.com/path/to/default/video.m3u8',
-      width: "100%",
-      height: "auto",
-      primary: "html5",
-      aspectratio: "16:9",
-      controls: true,
-      autostart: false,
-    });
-
-    const themes = [
-      { name: "Mumbai Indians", color: "var(--mi-blue)", imageId: "mi" },
-       { name: "Royal Challengers Bangalore", color: "var(--rcb-red)", imageId: "rcb" },
-      { name: "Kolkata Knight Riders", color: "var(--kkr-purple)", imageId: "kkr" },
-      { name: "Delhi Capitals", color: "var(--dc-blue)", imageId: "dc" },
-      { name: "Rajasthan Royals", color: "var(--rr-pink)", imageId: "rr" },
-      { name: "Sunrisers Hyderabad", color: "var(--srh-orange)", imageId: "srh" },
-      { name: "Lucknow Super Giants", color: "var(--lsg-skyblue)", imageId: "lsg" },
-      { name: "Gujarat Titans", color: "var(--gt-navy)", imageId: "gt" }
-    ];
-
-    const themeSelector = document.getElementById('theme-selector');
-    const root = document.documentElement;
-    const playerImages = document.querySelectorAll('.player-images img');
-
-    let currentThemeIndex = 0;
-
-    function updateThemeAndImage() {
-      // Hide all images
-      playerImages.forEach(img => img.classList.remove('active'));
-
-      // Update theme
-      const nextTheme = themes[currentThemeIndex];
-      root.style.setProperty('--current-color', nextTheme.color);
-      document.getElementById(nextTheme.imageId).classList.add('active');
-
-      // Increment theme index
-      currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-    }
-
-    themeSelector.addEventListener('click', updateThemeAndImage);
-
-    // Set initial theme and image
-    updateThemeAndImage();
+  function redirectToTelegram() {
+    // Your redirect code here
+    window.location.href = 'https://t.me/teamrohitoff45';
+  }
   </script>
 </body>
 </html>
-
-       
